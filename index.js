@@ -1,46 +1,11 @@
 const axios = require("axios");
-const {
-    nftforwallet,
-    sftforwallet,
-    tokensforwallet,
-    getwallet,
-    getwallets,
-    createwallet,
-    updatewallet,
-    deletewallet,
-    signature
-} = require("./apis/1_wallets");
-const {
-    readtx,
-    createtx,
-    createmetatx,
-    getsingletx,
-    gettxofwallet,
-    gettxstatus
-} = require("./apis/2_transactions");
-const {
-    resynctokens
-} = require("./apis/3_tokens");
-const {
-    resynccontractmetadata,
-    getcontractnfts
-} = require("./apis/4_contracts");
-const {
-    getnamespaces,
-    createnamespaces,
-    getmetadataitems,
-    updatemetadataitem,
-    createmetadataitem,
-    getsinglemetadataitem,
-    deletemetadataitem
-} = require("./apis/5_metadata");
-const {
-    getnfts,
-    resyncnfts
-} = require("./apis/6_nfts");
-const {
-    updateresyncnfts
-} = require("./apis/7_sfts");
+const { resynctokens } = require("./apis/3_tokens");
+const { updateresyncnfts } = require("./apis/7_sfts");
+const { getnfts, resyncnfts } = require("./apis/6_nfts");
+const { resynccontractmetadata, getcontractnfts } = require("./apis/4_contracts");
+const { readtx, createtx, createmetatx, getsingletx, gettxofwallet, gettxstatus } = require("./apis/2_transactions");
+const { nftforwallet, sftforwallet, tokensforwallet, getwallet, getwallets, createwallet, updatewallet, deletewallet, signature } = require("./apis/1_wallets");
+const { getnamespaces, createnamespaces, getmetadataitems, updatemetadataitem, createmetadataitem, getsinglemetadataitem, deletemetadataitem } = require("./apis/5_metadata");
 
 
 
@@ -52,133 +17,133 @@ class Utility {
     }
 
     init() {
-       axios.defaults.headers.common['accept'] = `'application/json'`;
+        axios.defaults.headers.common['accept'] = `'application/json'`;
         axios.defaults.headers.common['X-API-Key'] = `${this.apikey}`;
     }
 
     // Wallet APIs
     nftForWallet(...params) {
-        nftforwallet(...params)
+        return nftforwallet(...params)
     }
 
     sftForWallet(...params) {
-        sftforwallet(...params)
+        return sftforwallet(...params)
     }
 
     tokensForWallet(...params) {
-        tokensforwallet(...params)
+        return tokensforwallet(...params)
     }
 
     getWallet(...params) {
-        getwallet(...params)
+        return getwallet(...params)
     }
 
     getWallets(...params) {
-        getwallets(...params)
+        return getwallets(...params)
     }
 
     createWallet(...params) {
-        createwallet(...params)
+        return createwallet(...params)
     }
 
     updateWallet(...params) {
-        updatewallet(...params)
+        return updatewallet(...params)
     }
 
     deleteWallet(...params) {
-        deletewallet(...params)
+        return deletewallet(...params)
     }
 
     getSignature(...params) {
-        signature(...params)
+        return signature(...params)
     }
-    
-    
+
+
     // Transaction APIs
     readTx(...params) {
-        readtx(...params)
+        return readtx(...params)
     }
-    
+
     createTx(...params) {
-        createtx(...params)
+        return createtx(...params)
     }
-    
+
     createMetaTx(...params) {
-        createmetatx(...params)
+        return createmetatx(...params)
     }
-    
+
     getSingleTx(...params) {
-        getsingletx(...params)
+        return getsingletx(...params)
     }
-    
+
     getTxOfWallet(...params) {
-        gettxofwallet(...params)
+        return gettxofwallet(...params)
     }
-    
+
     getTxStatus(...params) {
-        gettxstatus(...params)
+        return gettxstatus(...params)
     }
 
 
     // Tokens APIs
     resyncTokens(...params) {
-        resynctokens(...params)
+        return resynctokens(...params)
     }
-    
+
 
     // Contracts APIs
     resyncContractMetadata(...params) {
-        resynccontractmetadata(...params)
+        return resynccontractmetadata(...params)
     }
 
     getContractNfts(...params) {
-        getcontractnfts(...params)
+        return getcontractnfts(...params)
     }
 
 
     // Metadata APIs
     getNamespaces(...params) {
-        getnamespaces(...params)
+        return getnamespaces(...params)
     }
 
     createNamespaces(...params) {
-        createnamespaces(...params)
+        return createnamespaces(...params)
     }
 
     getMetadataItems(...params) {
-        getmetadataitems(...params)
+        return getmetadataitems(...params)
     }
 
     updateMetadataItem(...params) {
-        updatemetadataitem(...params)
+        return updatemetadataitem(...params)
     }
 
     createMetadataItem(...params) {
-        createmetadataitem(...params)
+        return createmetadataitem(...params)
     }
 
     getSingleMetadataItem(...params) {
-        getsinglemetadataitem(...params)
+        return getsinglemetadataitem(...params)
     }
 
     deleteMetadataItem(...params) {
-        deletemetadataitem(...params)
+        return deletemetadataitem(...params)
     }
 
 
     // Nfts APIs
     getNfts(...params) {
-        getnfts(...params)
+        return getnfts(...params)
     }
 
     resyncNfts(...params) {
-        resyncnfts(...params)
+        return resyncnfts(...params)
     }
-    
-    
+
+
     // Sfts APIs
     updateResyncnfts(...params) {
-        updateresyncnfts(...params)
+        return updateresyncnfts(...params)
     }
 
 
